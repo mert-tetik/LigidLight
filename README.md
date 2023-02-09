@@ -1,3 +1,1 @@
-# LigidLight
-
-Li
+# LigidLight Texture Generator
