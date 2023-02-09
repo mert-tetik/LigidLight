@@ -3,8 +3,8 @@ project(LigidLight VERSION 1.1)
 
 file(GLOB_RECURSE LIGID_SOURCES
    ${PROJECT_SOURCE_DIR}/*.cpp
-   ${PROJECT_SOURCE_DIR}/thirdparty/glad.c
-   ${PROJECT_SOURCE_DIR}/thirdparty/tinyfiledialogs.c
+   ${PROJECT_SOURCE_DIR}/LigidLight/thirdparty/glad.c
+   ${PROJECT_SOURCE_DIR}/LigidLight/thirdparty/tinyfiledialogs.c
 )
 
 #Disable warnings
