@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "Core/Application.hpp"
+#include "Application.hpp"
 
 void LigidL::run(){
     std::cout << "AAAAA";
