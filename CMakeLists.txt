@@ -34,5 +34,5 @@ add_executable(LigidLight
 #    target_compile_definitions(LigidLight PRIVATE CRT)
 # endif (WIN32)
    
-target_include_directories(LigidLight PRIVATE ${PROJECT_SOURCE_DIR}/src/Core)
-target_link_directories(LigidLight PRIVATE ${PROJECT_SOURCE_DIR}/src/Core)
+target_include_directories(LigidLight PRIVATE ${PROJECT_SOURCE_DIR}/src)
+target_link_directories(LigidLight PRIVATE ${PROJECT_SOURCE_DIR}/src)
