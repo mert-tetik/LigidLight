@@ -6,6 +6,7 @@
 #include "Application.hpp"
 #include "Gl.hpp"
 #include "Util.hpp"
+#include "ColorPalette.hpp"
 
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
@@ -19,7 +20,7 @@ void processInput(GLFWwindow *window);
 void LigidL::run()
 {
     Util util;
-    
+    ColorPalette colorPalette;
     Gl gl;
     gl.glfwInitializeAndConfigure();
     
@@ -28,8 +29,6 @@ void LigidL::run()
 
     gl.loadGl();
     
-    glm::vec3 bgColor = glm::vec3(227,231,233);
-    bgColor = util.vec3RGBscaleTo1(bgColor);
     
     // render loop
     // -----------
@@ -39,7 +38,7 @@ void LigidL::run()
         processInput(window);
 
         // render
-        glClearColor(bgColor.r,bgColor.g,bgColor.b,1.0f);
+        glClearColor(colorPalette.bgColor[0],colorPalette.bgColor[1],colorPalette.bgColor[2],1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
