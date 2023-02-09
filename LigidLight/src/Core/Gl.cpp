@@ -22,7 +22,9 @@ GLFWwindow* Gl::glfwCreateTheWindow(){
     const unsigned int SCR_HEIGHT = 600;
     // glfw window creation
     // --------------------
-    glfwWindowHint(GLFW_DECORATED, false);
+
+    glfwWindowHint(GLFW_DECORATED, false);//Remove title bar
+    
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
     if (window == NULL)
     {
