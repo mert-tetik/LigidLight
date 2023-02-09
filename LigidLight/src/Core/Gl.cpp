@@ -22,6 +22,7 @@ GLFWwindow* Gl::glfwCreateTheWindow(){
     const unsigned int SCR_HEIGHT = 600;
     // glfw window creation
     // --------------------
+    glfwWindowHint(GLFW_DECORATED, false);
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
     if (window == NULL)
     {
