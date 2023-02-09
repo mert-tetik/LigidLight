@@ -29,7 +29,8 @@ void LigidL::run()
 
     gl.loadGl();
     
-    
+    Programs programs = gl.getPrograms();
+
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))

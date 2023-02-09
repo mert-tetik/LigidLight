@@ -10,6 +10,7 @@ public:
     void glfwInitializeAndConfigure();
     GLFWwindow* glfwCreateTheWindow();
     void loadGl();
+    Programs getPrograms();
 };
 
 #endif
