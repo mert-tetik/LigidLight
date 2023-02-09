@@ -8,7 +8,7 @@ class Gl
 {
 public:
     void glfwInitializeAndConfigure();
-    GLFWwindow* glfwCreateWindow();
+    GLFWwindow* glfwCreateTheWindow();
     void loadGl();
 };
 

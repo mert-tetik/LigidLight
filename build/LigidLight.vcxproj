@@ -318,6 +318,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\CASPER\source\repos\LigidLight\LigidLight\src\Core\Application.cpp" />
+    <ClCompile Include="C:\Users\CASPER\source\repos\LigidLight\LigidLight\src\Core\Gl.cpp" />
+    <ClCompile Include="C:\Users\CASPER\source\repos\LigidLight\LigidLight\src\Core\Util.cpp" />
     <ClCompile Include="C:\Users\CASPER\source\repos\LigidLight\LigidLight\src\Main.cpp" />
     <ClCompile Include="C:\Users\CASPER\source\repos\LigidLight\LigidLight\thirdparty\glad.c" />
     <ClCompile Include="C:\Users\CASPER\source\repos\LigidLight\LigidLight\thirdparty\include\glm\detail\glm.cpp" />

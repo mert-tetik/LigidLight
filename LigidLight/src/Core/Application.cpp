@@ -5,16 +5,20 @@
 
 #include "Application.hpp"
 #include "Gl.hpp"
+#include "Util.hpp"
+
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+#include "glm/gtc/type_ptr.hpp"
+#include "glm/gtx/string_cast.hpp"
 
 #include <iostream>
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
-
-
 
 void LigidL::run()
 {
+    Util util;
     
     Gl gl;
     gl.glfwInitializeAndConfigure();
@@ -23,7 +27,10 @@ void LigidL::run()
     window = gl.glfwCreateTheWindow();
 
     gl.loadGl();
-
+    
+    glm::vec3 bgColor = glm::vec3(227,231,233);
+    bgColor = util.vec3RGBscaleTo1(bgColor);
+    
     // render loop
     // -----------
     while (!glfwWindowShouldClose(window))
@@ -32,7 +39,7 @@ void LigidL::run()
         processInput(window);
 
         // render
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        glClearColor(bgColor.r,bgColor.g,bgColor.b,1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)

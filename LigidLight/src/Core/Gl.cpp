@@ -17,7 +17,7 @@ void Gl::glfwInitializeAndConfigure(){
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     #endif
 }
-GLFWwindow* Gl::glfwCreateWindow(){
+GLFWwindow* Gl::glfwCreateTheWindow(){
     const unsigned int SCR_WIDTH = 800;
     const unsigned int SCR_HEIGHT = 600;
     // glfw window creation
@@ -29,6 +29,8 @@ GLFWwindow* Gl::glfwCreateWindow(){
         glfwTerminate();
     }
     glfwMakeContextCurrent(window);
+
+    return window;
 }
 
 void Gl::loadGl(){
@@ -38,5 +40,4 @@ void Gl::loadGl(){
     {
         std::cout << "Failed to initialize GLAD" << std::endl;
     }    
-
 }

@@ -4,6 +4,12 @@
     <ClCompile Include="C:\Users\CASPER\source\repos\LigidLight\LigidLight\src\Core\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\CASPER\source\repos\LigidLight\LigidLight\src\Core\Gl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\CASPER\source\repos\LigidLight\LigidLight\src\Core\Util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\CASPER\source\repos\LigidLight\LigidLight\src\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
