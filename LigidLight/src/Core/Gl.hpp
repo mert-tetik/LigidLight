@@ -4,6 +4,11 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+#include "glm/gtc/type_ptr.hpp"
+#include "glm/gtx/string_cast.hpp"
+
 class Gl
 {
 public:
@@ -11,6 +16,9 @@ public:
     GLFWwindow* glfwCreateTheWindow();
     void loadGl();
     Programs getPrograms();
+
+    void uniform4fv(unsigned int program, const char* target, glm::vec4 &vectorValue);  
+    void uniformMatrix4fv(unsigned int program, const char* target, glm::mat4x4 matrixVal);
 };
 
 #endif

@@ -7,6 +7,11 @@
 #include "Gl.hpp"
 #include "Util.hpp"
 
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+#include "glm/gtc/type_ptr.hpp"
+#include "glm/gtx/string_cast.hpp"
+
 #include <iostream>
 
 void Gl::glfwInitializeAndConfigure(){
@@ -85,7 +90,17 @@ unsigned int createProgram(std::string path){
 	return program;
 }
 
-Programs getPrograms(){
+Programs Gl::getPrograms(){
     Programs programs;
     programs.UIProgram = createProgram("LigidLight/resources/Shaders/ui");
+
+    return programs;
+}
+
+//Uniforms
+void Gl::uniform4fv(unsigned int program, const char* target, glm::vec4 &vectorValue) {
+	glUniform4fv(glGetUniformLocation(program, target),1, &vectorValue[0]);
+}
+void Gl::uniformMatrix4fv(unsigned int program, const char* target, glm::mat4x4 matrixVal) {
+	glUniformMatrix4fv(glGetUniformLocation(program, target), 1,GL_FALSE, glm::value_ptr(matrixVal));
 }
