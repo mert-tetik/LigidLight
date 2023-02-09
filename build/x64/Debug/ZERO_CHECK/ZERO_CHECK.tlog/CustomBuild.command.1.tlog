@@ -1,0 +1,10 @@
+^C:\USERS\CASPER\SOURCE\REPOS\LIGIDLIGHT\BUILD\CMAKEFILES\32A47D7412914A9FB05B13F1A203C1FD\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/CASPER/source/repos/LigidLight -BC:/Users/CASPER/source/repos/LigidLight/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/CASPER/source/repos/LigidLight/build/LigidLight.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
