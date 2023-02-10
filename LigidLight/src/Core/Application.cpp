@@ -16,6 +16,9 @@
 #include <vector>
 
 void processInput(GLFWwindow *window);
+void mouseCallback(GLFWwindow* window, double xpos, double ypos);
+
+glm::vec2 mousePos = {0,0}; //Cursor pos in the window
 
 void LigidL::run()
 {
@@ -75,10 +78,11 @@ void LigidL::run()
     
     gl.uniform4fv(programs.UIProgram,"color",titleBarclr);
 
-
+    glfwSetCursorPosCallback(window, mouseCallback);
 
     // render loop
     // -----------
+
     while (!glfwWindowShouldClose(window))
     {
         // input
@@ -87,7 +91,9 @@ void LigidL::run()
         // render
         glClearColor(colorPalette.bgColor[0],colorPalette.bgColor[1],colorPalette.bgColor[2],1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        
+
+        gl.windowFollowTheCursor(window);
+
         glUseProgram(programs.UIProgram);
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 6);
@@ -99,6 +105,11 @@ void LigidL::run()
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
     glfwTerminate();
+}
+
+void mouseCallback(GLFWwindow* window, double xpos, double ypos){
+    mousePos.x = xpos;
+    mousePos.y = ypos;
 }
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly

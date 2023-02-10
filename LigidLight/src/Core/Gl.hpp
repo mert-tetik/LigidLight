@@ -16,6 +16,9 @@ public:
     GLFWwindow* glfwCreateTheWindow();
     void loadGl();
     Programs getPrograms();
+    glm::vec2 getScreenCursorPos();
+    void windowFollowTheCursor(GLFWwindow* window);
+
 
     void uniform4fv(unsigned int program, const char* target, glm::vec4 &vectorValue);  
     void uniformMatrix4fv(unsigned int program, const char* target, glm::mat4x4 matrixVal);

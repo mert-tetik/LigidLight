@@ -97,6 +97,45 @@ Programs Gl::getPrograms(){
     return programs;
 }
 
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+#include <windows.h>
+glm::vec2 Gl::getScreenCursorPos(){
+    POINT p; //Cursor pos in the screen via win header
+    GetCursorPos(&p);
+    glm::vec2 result = {p.x,p.y};
+    return result;
+}
+#elif __APPLE__
+glm::vec2 Gl::getScreenCursorPos(){
+    glm::vec2 result = {0,0};
+    return result;
+}
+#elif __linux__
+glm::vec2 Gl::getScreenCursorPos(){
+    glm::vec2 result = {0,0};
+    return result;
+}
+#endif
+
+glm::vec2 mousePosSc; //Cursor pos in the screen 
+glm::vec2 lastMousePosSc; 
+glm::vec2 mousePosScOffset; 
+void Gl::windowFollowTheCursor(GLFWwindow* window){
+    int windowPosX;
+    int windowPosY;
+    glfwGetWindowPos(window,&windowPosX,&windowPosY);
+    
+    mousePosSc = getScreenCursorPos();
+    mousePosScOffset = mousePosSc - lastMousePosSc;
+    
+    lastMousePosSc = mousePosSc;
+    
+    windowPosX += mousePosScOffset.x;
+    windowPosY += mousePosScOffset.y;
+    
+    glfwSetWindowPos(window,windowPosX,windowPosY);
+}
+
 //Uniforms
 void Gl::uniform4fv(unsigned int program, const char* target, glm::vec4 &vectorValue) {
 	glUniform4fv(glGetUniformLocation(program, target),1, &vectorValue[0]);
